@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --neon-blue: #00f3ff;
+  --neon-pink: #ff00ff;
+  --neon-green: #00ff00;
+  --bg-dark: #0a0a12;
+}
+
+@layer base {
+  body {
+    @apply bg-gray-900 text-white overflow-hidden select-none;
+    font-family: 'Courier New', Courier, monospace; /* Fallback retro font */
+  }
+}
+
+@layer utilities {
+  .text-neon-blue {
+    text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+  }
+  .text-neon-pink {
+    text-shadow: 0 0 5px var(--neon-pink), 0 0 10px var(--neon-pink);
+  }
+  .box-neon-blue {
+    box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+  }
+  
+  .glass-panel {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 rounded;
+}
